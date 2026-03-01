@@ -35,20 +35,20 @@
 
         header {
             position: fixed;
-            top: 1.5rem;
+            top: 2.5rem;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 2rem;
+            gap: 4rem;
             background-color: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
             box-shadow: 0 8 px 32px rgba(181, 48, 82, 0.15);
             border-radius: 4rem;
             z-index: 1000;
-            padding: 0.8rem 2.5rem; 
+            padding: 0.9rem 2.5rem; 
             width: max-content;
             transition: all 0.3s ease;
         }
@@ -61,7 +61,7 @@
         .logo { color: var(--text-dark); font-size: 1.2rem; font-weight: 700; }
         .logo span { color: var(--primary); }
 
-        .nav-links { display: flex; gap: 2rem; }
+        .nav-links { display: flex; gap: 2.96rem; }
         .nav-links li a {
             color: var(--text-dark);
             font-weight: 500;
@@ -91,14 +91,14 @@
 
         section {
             min-height: 100vh;
-            padding: 8rem 12% 5rem; 
+            padding: 12rem 9% 2rem; 
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
         }
 
-        .about-container { 
+        .home-container { 
             display: flex; 
             align-items: center; 
             justify-content: space-between; 
@@ -106,17 +106,38 @@
             width: 100%; 
         }
 
-        .about-content {
-            flex: 1.2; text-align: left; }
-        .about-content h2 { 
-            font-size: 4.5rem; font-weight: 800; line-height: 1.1; }
-        .about-content h2 span { 
-            color: var(--primary); }
-        .about-content h3 { 
-            font-size: 1.6rem; color: #555; margin: 0.8rem 0; }
-        .about-content p { 
-            color: #666; line-height: 1.7; max-width: 35rem; }
+        .home-content {
+            flex: 1.2; 
+            text-align: left;
+            padding: 2rem;
+         }
 
+        .home-content h2 { 
+            font-size: 4.5rem; 
+            font-weight: 800; 
+            line-height: 1.1; }
+        .home-content h2 span { 
+            color: var(--primary); }
+        .home-content h3 { 
+            font-size: 1.6rem; color: #555; margin: 0.8rem 0; }
+        .home-content p { 
+            color: #666; line-height: 1.7; max-width: 35rem; }
+       
+       
+        .about-container {
+            background: rgba(255, 255, 255, 0.4);
+            padding: 3rem;
+            border-radius: 2.5rem;
+            backdrop-filter: blur(10px);
+            display: block;
+            width: 100%;
+            max-width: 1000px;
+        }
+        
+
+    
+
+      
         .btn {
             display: inline-block; padding: 0.9rem 2.2rem;
             background: var(--primary); color: var(--white);
@@ -126,7 +147,10 @@
         }
         .btn:hover { background: transparent; color: var(--primary); transform: translateY(-0.3rem); }
 
-        .social-links { display: flex; gap: 1.2rem; margin-top: 2.2rem; }
+        .social-links { 
+            display: flex; 
+            gap: 1.2rem; margin-top: 2.2rem; 
+        }
         .social-links a {
             width: 3rem; height: 3rem; display: flex; align-items: center; justify-content: center;
             border: 0.125rem solid var(--primary); border-radius: 50%;
@@ -143,7 +167,6 @@
             box-shadow: 0 0 4rem rgba(181, 48, 82, 0.3);
         }
 
-       
         .section-title {
             font-size: 3.5rem;
             font-weight: 800;
@@ -186,7 +209,6 @@
         .mastery-table tr { border-bottom: 1px solid rgba(181, 48, 82, 0.1); transition: 0.3s; }
         .percent-badge { background: rgba(181, 48, 82, 0.1); color: var(--primary); padding: 0.3rem 0.8rem; border-radius: 1rem; font-weight: 700; }
 
-    
         .projects-container {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -205,27 +227,13 @@
         .project-card:hover { 
             transform: translateY(-15px); 
             box-shadow: 0 2rem 5rem rgba(181, 48, 82, 0.25); }
-        .project-img { 
-            width: 100%; height: 250px; background: #f0f0f0; 
-            overflow: hidden; }
-        .project-img img {
-             width: 100%; height: 100%; 
-             object-fit: cover; }
-        .project-info {
-             padding: 1.5rem; text-align: left; }
-        .project-info h4 { 
-            font-size: 1.2rem; color: var(--text-dark); 
-            margin-bottom: 0.5rem; }
-        .project-info p { 
-            font-size: 0.9rem; color: #666; 
-            margin-bottom: 1rem; }
-        .project-link { 
-            color: var(--primary); font-weight: 600;
-            font-size: 0.9rem; 
-            display: inline-flex;
-             align-items: center; gap: 0.5rem; }
+        .project-img { width: 100%; height: 250px; background: #f0f0f0; overflow: hidden; }
+        .project-img img { width: 100%; height: 100%; object-fit: cover; }
+        .project-info { padding: 1.5rem; text-align: left; }
+        .project-info h4 { font-size: 1.2rem; color: var(--text-dark); margin-bottom: 0.5rem; }
+        .project-info p { font-size: 0.9rem; color: #666; margin-bottom: 1rem; }
+        .project-link { color: var(--primary); font-weight: 600; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.5rem; }
 
-      
         .contact-container {
             display: flex;
             gap: 3rem;
@@ -252,34 +260,14 @@
             border-color: var(--primary);
             box-shadow: 0 0 10px rgba(181, 48, 82, 0.1);
          }
-        .info-item { display: flex; 
-            align-items: center; gap: 1rem; 
-            margin-bottom: 1.5rem; }
-        .info-item i { 
-            font-size: 1.5rem;
-            color: var(--primary); }
+        .info-item { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+        .info-item i { font-size: 1.5rem; color: var(--primary); }
 
-        /* --- RESPONSIVE LAYOUT SCALING --- */
 @media (max-width: 768px) {
-    html {
-        font-size: 50%; 
-    }
-
-    body {
-        
-        overflow-x: hidden;
-        width: 100%;
-    }
-
-    section {
-       
-        padding: 4rem 3%;
-    }
-
-    header {
-        width: 95%;
-        gap: 1rem;
-    }
+    html { font-size: 50%; }
+    body { overflow-x: hidden; width: 100%; }
+    section { padding: 4rem 3%; }
+    header { width: 95%; gap: 1rem; }
 }
     </style>
 </head>
@@ -288,7 +276,7 @@
     <header>
         <a href="#" class="logo"><span>Junita</span> Randa Liling</a>
         <ul class="nav-links">
-            <li><a href="#about">About</a></li>
+            <li><a href="#Home">Home</a></li> <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
@@ -298,10 +286,10 @@
         </a>
     </header>
 
-    <section id="about">
-        <div class="about-container">
-            <div class="about-content">
-                <h2>Hi, I'm <span>Junita</span>!</h2>
+    <section id="Home">
+        <div class="home-container">
+            <div class="home-content">
+               <h2>Hi, I'm <span>Junita</span>!</h2>
                 <h3>Information System Student</h3>
                 <p>I have a strong interest in UI/UX and I'm currently exploring various aspects of front-end development.</p>
                 <a href="#contact" class="btn">Contact Me</a>
@@ -314,6 +302,17 @@
                 <img src="junita.png" alt="Junita Profile">
             </div>
         </div>
+    </section>
+
+    <section id="about">
+        <h2 class="section-title">About <span>Me</span></h2>
+        <div class="about-container">
+            <p>Hi, I'm Junita, an Information System student at Universitas Internasional Batam.
+               I move in the world of technology, but I don't live in just one dimension.
+               Beyond code and systems, I have a thing for music—I play the guitar pretty well.
+               And when the noise quiets down, you'll find me getting lost in films, collecting stories
+               the way some people collect memories.</p>
+       </div>
     </section>
 
     <section id="skills">
