@@ -248,9 +248,39 @@
             outline: none;
             transition: 0.3s;
         }
-        .contact-form input:focus, .contact-form textarea:focus { border-color: var(--primary); box-shadow: 0 0 10px rgba(181, 48, 82, 0.1); }
-        .info-item { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
-        .info-item i { font-size: 1.5rem; color: var(--primary); }
+        .contact-form input:focus, .contact-form textarea:focus { 
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(181, 48, 82, 0.1);
+         }
+        .info-item { display: flex; 
+            align-items: center; gap: 1rem; 
+            margin-bottom: 1.5rem; }
+        .info-item i { 
+            font-size: 1.5rem;
+            color: var(--primary); }
+
+        /* --- RESPONSIVE LAYOUT SCALING --- */
+@media (max-width: 768px) {
+    html {
+        font-size: 50%; 
+    }
+
+    body {
+        
+        overflow-x: hidden;
+        width: 100%;
+    }
+
+    section {
+       
+        padding: 4rem 3%;
+    }
+
+    header {
+        width: 95%;
+        gap: 1rem;
+    }
+}
     </style>
 </head>
 <body>
