@@ -33,49 +33,86 @@
                         var(--bg-light);
         }
 
-        header {
+        /* --- SIDEBAR CSS START --- */
+        .sidebar-left, .sidebar-right {
             position: fixed;
-            top: 2.5rem;
-            left: 50%;
-            transform: translateX(-50%);
+            top: 0;
+            height: 100vh;
             display: flex;
+            flex-direction: column;
             align-items: center;
-            justify-content: center;
-            gap: 4rem;
             background-color: rgba(255, 255, 255, 0.7);
             backdrop-filter: blur(15px);
-            -webkit-backdrop-filter: blur(15px);
-            box-shadow: 0 8 px 32px rgba(181, 48, 82, 0.15);
-            border-radius: 4rem;
             z-index: 1000;
-            padding: 0.9rem 2.5rem; 
-            width: max-content;
-            transition: all 0.3s ease;
-        }
-        header:hover{
-            background-color: rgba(255, 255, 255, 0.9);
-            transform: translateX(-50%) translateY(-5px);
-            box-shadow: 0 12px 40px rgba(181, 48, 82, 0.25);
+            border-color: rgba(181, 48, 82, 0.1);
+            border-style: solid;
         }
 
-        .logo { color: var(--text-dark); font-size: 1.2rem; font-weight: 700; }
-        .logo span { color: var(--primary); }
+        .sidebar-left {
+            left: 0;
+            width: 180px;
+            border-width: 0 1px 0 0;
+            padding: 4rem 1rem;
+        }
 
-        .nav-links { display: flex; gap: 2.96rem; }
-        .nav-links li a {
+        .sidebar-right {
+            right: 0;
+            width: 80px;
+            border-width: 0 0 0 1px;
+            justify-content: center;
+            padding: 2rem 0;
+        }
+
+        .nav-links-vertical { 
+            list-style: none;
+            margin-top: 5rem;
+            display: flex;
+            flex-direction: column;
+            gap: 2.5rem;
+            text-align: center;
+        }
+
+        .nav-links-vertical li a {
             color: var(--text-dark);
             font-weight: 500;
-            position: relative;
+            transition: 0.3s;
+            font-size: 1.1rem;
+        }
+
+        .nav-links-vertical li a:hover { 
+            color: var(--primary); 
+        }
+
+        .connect-text {
+            writing-mode: vertical-rl;
+            font-weight: 800;
+            color: var(--primary);
+            margin-bottom: 2.5rem;
+            letter-spacing: 0.5rem;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        .side-socials {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .side-socials a {
+            font-size: 1.5rem;
+            color: var(--text-dark);
             transition: 0.3s;
         }
 
-        .nav-links li a:hover { color: var(--primary); }
-        .nav-links li a::before {
-            content: ""; position: absolute; width: 0; height: 0.2rem;
-            bottom: -0.3rem; left: 0; background: var(--primary);
-            transition: 0.3s; border-radius: 1rem;
+        .side-socials a:hover {
+            color: var(--primary);
+            transform: scale(1.2);
         }
-        .nav-links li a:hover::before { width: 100%; }
+        /* --- SIDEBAR CSS END --- */
+
+        .logo { color: var(--text-dark); font-size: 1.2rem; font-weight: 700; text-align: center; line-height: 1.2; }
+        .logo span { color: var(--primary); }
 
         .visit-btn {
             padding: 0.7rem 1.5rem;
@@ -91,7 +128,10 @@
 
         section {
             min-height: 100vh;
-            padding: 12rem 9% 2rem; 
+            /* Memberi ruang agar tidak tertutup sidebar */
+            margin-left: 180px;
+            margin-right: 80px;
+            padding: 5rem 5% 2rem; 
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -123,7 +163,6 @@
         .home-content p { 
             color: #666; line-height: 1.7; max-width: 35rem; }
        
-       
         .about-container {
             background: rgba(255, 255, 255, 0.4);
             padding: 3rem;
@@ -133,11 +172,7 @@
             width: 100%;
             max-width: 1000px;
         }
-        
 
-    
-
-      
         .btn {
             display: inline-block; padding: 0.9rem 2.2rem;
             background: var(--primary); color: var(--white);
@@ -263,28 +298,35 @@
         .info-item { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
         .info-item i { font-size: 1.5rem; color: var(--primary); }
 
-@media (max-width: 768px) {
-    html { font-size: 50%; }
-    body { overflow-x: hidden; width: 100%; }
-    section { padding: 4rem 3%; }
-    header { width: 95%; gap: 1rem; }
-}
+        @media (max-width: 1024px) {
+            .sidebar-left, .sidebar-right { display: none; }
+            section { margin: 0; width: 100%; padding: 8rem 5% 2rem; }
+            html { font-size: 50%; }
+            body { overflow-x: hidden; }
+        }
     </style>
 </head>
 <body>
 
-    <header>
-        <a href="#" class="logo"><span>Junita</span> Randa Liling</a>
-        <ul class="nav-links">
-            <li><a href="#Home">Home</a></li> <li><a href="#about">About</a></li>
+    <aside class="sidebar-left">
+        <a href="#" class="logo"><span>Junita</span><br>Randa Liling</a>
+        <ul class="nav-links-vertical">
+            <li><a href="#Home">Home</a></li> 
+            <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
-        <a href="https://github.com/Junitaaa" target="_blank">
-            <button class="visit-btn">Visit Github</button>
-        </a>
-    </header>
+    </aside>
+
+    <aside class="sidebar-right">
+       <div class="connect-text">Connect</div>
+       <div class="side-socials">
+           <a href="https://github.com/Junitaaa" target="_blank"><i class="fa-brands fa-github"></i></a>
+           <a href="https://www.instagram.com/junitaranda_" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+           <a href="mailto:lilingjunita5@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+       </div>
+    </aside>
 
     <section id="Home">
         <div class="home-container">
@@ -293,10 +335,6 @@
                 <h3>Information System Student</h3>
                 <p>I have a strong interest in UI/UX and I'm currently exploring various aspects of front-end development.</p>
                 <a href="#contact" class="btn">Contact Me</a>
-                <div class="social-links">
-                    <a href="https://github.com/Junitaaa" target="_blank"><i class="fa-brands fa-github"></i></a>
-                    <a href="https://www.instagram.com/junitaranda_" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-                </div>
             </div>
             <div class="about-img">
                 <img src="junita.png" alt="Junita Profile">
