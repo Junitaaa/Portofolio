@@ -18,258 +18,383 @@
         }
 
         * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+            margin: 0; padding: 0; box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
-            text-decoration: none;
-            scroll-behavior: smooth; 
+            text-decoration: none; scroll-behavior: smooth;
         }
 
         body {
             min-height: 100vh;
-            background: radial-gradient(circle at 0% 0%, rgba(237, 185, 199, 0.9) 0%, rgba(197, 160, 169, 0.55) 25%, transparent 45%),
-                        radial-gradient(circle at 100% 100%, rgba(242, 182, 197, 0.7) 0%, transparent 50%),
+            background: radial-gradient(circle at 0% 0%, rgba(237,185,199,0.9) 0%, rgba(197,160,169,0.55) 25%, transparent 45%),
+                        radial-gradient(circle at 100% 100%, rgba(242,182,197,0.7) 0%, transparent 50%),
                         var(--bg-light);
         }
 
-        /* --- MOBILE NAV (Hanya muncul di HP) --- */
+        /* ── MOBILE NAV ── */
         .mobile-nav {
-            display: none;
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(255, 255, 255, 0.85);
-            backdrop-filter: blur(10px);
-            padding: 1.2rem 5%;
-            justify-content: space-between;
-            align-items: center;
-            z-index: 2000;
-            box-shadow: 0 2px 15px rgba(181, 48, 82, 0.1);
+            display: none; position: fixed; top: 0; width: 100%;
+            background: rgba(255,255,255,0.85); backdrop-filter: blur(10px);
+            padding: 1.2rem 5%; justify-content: space-between; align-items: center;
+            z-index: 2000; box-shadow: 0 2px 15px rgba(181,48,82,0.1);
         }
         .mobile-nav .logo { font-size: 1.1rem; }
-        .mobile-menu-links { display: flex; gap: 1.2rem; }
-        .mobile-menu-links a { font-size: 0.85rem; color: var(--text-dark); font-weight: 600; }
+        .mobile-menu-links { display: flex; gap: 1rem; flex-wrap: wrap; }
+        .mobile-menu-links a { font-size: 0.8rem; color: var(--text-dark); font-weight: 600; }
 
-        /* --- SIDEBAR CSS --- */
+        /* ── SIDEBARS ── */
         .sidebar-left, .sidebar-right {
-            position: fixed;
-            top: 0;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            background-color: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(15px);
-            z-index: 1000;
-            border-color: rgba(181, 48, 82, 0.1);
-            border-style: solid;
+            position: fixed; top: 0; height: 100vh; display: flex; flex-direction: column;
+            align-items: center; background-color: rgba(255,255,255,0.7);
+            backdrop-filter: blur(15px); z-index: 1000;
+            border-color: rgba(181,48,82,0.1); border-style: solid;
         }
-
-        .sidebar-left {
-            left: 0;
-            width: 180px;
-            border-width: 0 1px 0 0;
-            padding: 4rem 1rem;
-        }
-
-        .sidebar-right {
-            right: 0;
-            width: 80px;
-            border-width: 0 0 0 1px;
-            justify-content: center;
-        }
+        .sidebar-left { left: 0; width: 180px; border-width: 0 1px 0 0; padding: 4rem 1rem; }
+        .sidebar-right { right: 0; width: 80px; border-width: 0 0 0 1px; justify-content: center; }
 
         .logo { color: var(--text-dark); font-size: 1.2rem; font-weight: 700; text-align: center; line-height: 1.2; }
         .logo span { color: var(--primary); }
 
-        .nav-links-vertical { 
-            list-style: none;
-            margin-top: 5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 2.5rem;
-            text-align: center;
+        .nav-links-vertical {
+            list-style: none; margin-top: 3rem; display: flex;
+            flex-direction: column; gap: 1.8rem; text-align: center;
         }
-        .nav-links-vertical li a {
-            color: var(--text-dark);
-            font-weight: 500;
-            transition: 0.3s;
-        }
+        .nav-links-vertical li a { color: var(--text-dark); font-weight: 500; transition: 0.3s; font-size: 0.9rem; }
         .nav-links-vertical li a:hover { color: var(--primary); }
 
-        .connect-text {
-            writing-mode: vertical-rl;
-            font-weight: 800;
-            color: var(--primary);
-            margin-bottom: 2.5rem;
-            letter-spacing: 0.5rem;
-            text-transform: uppercase;
-        }
+        .connect-text { writing-mode: vertical-rl; font-weight: 800; color: var(--primary); margin-bottom: 2.5rem; letter-spacing: 0.5rem; text-transform: uppercase; }
         .side-socials { display: flex; flex-direction: column; gap: 2rem; }
         .side-socials a { font-size: 1.5rem; color: var(--text-dark); transition: 0.3s; }
         .side-socials a:hover { color: var(--primary); transform: scale(1.2); }
 
-        /* --- CONTENT SECTION --- */
+        /* ── SECTIONS ── */
         section {
-            min-height: 100vh;
-            margin-left: 180px;
-            margin-right: 80px;
-            padding: 5rem 5% 2rem; 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
+            min-height: 100vh; margin-left: 180px; margin-right: 80px;
+            padding: 5rem 5% 4rem;
+            display: flex; flex-direction: column;
+            align-items: center; justify-content: center;
         }
 
+        .section-title { font-size: 3rem; font-weight: 800; margin-bottom: 3rem; text-align: center; }
+        .section-title span { color: var(--primary); }
+
+        .btn {
+            display: inline-block; padding: 0.9rem 2.2rem;
+            background: var(--primary); color: var(--white);
+            border-radius: 3.5rem; font-weight: 600; margin-top: 2.5rem;
+            border: 0.15rem solid var(--primary); transition: 0.4s; cursor: pointer;
+        }
+        .btn:hover { background: transparent; color: var(--primary); transform: translateY(-0.3rem); }
+
+        /* ── HOME ── */
         .home-container { display: flex; align-items: center; justify-content: space-between; gap: 4rem; width: 100%; }
         .home-content { flex: 1.2; text-align: left; padding: 2rem; }
         .home-content h2 { font-size: 4rem; font-weight: 800; line-height: 1.1; }
         .home-content h2 span { color: var(--primary); }
         .home-content h3 { font-size: 1.6rem; color: #555; margin: 0.8rem 0; }
         .home-content p { color: #666; line-height: 1.7; max-width: 35rem; }
-       
-        .about-container {
-            background: rgba(255, 255, 255, 0.4);
-            padding: 3rem;
-            border-radius: 2.5rem;
-            backdrop-filter: blur(10px);
-            width: 100%;
-            max-width: 1000px;
-        }
-        
-        .btn {
-            display: inline-block; padding: 0.9rem 2.2rem;
-            background: var(--primary); color: var(--white);
-            border-radius: 3.5rem; font-weight: 600; margin-top: 2.5rem;
-            border: 0.15rem solid var(--primary); transition: 0.4s;
-            cursor: pointer;
-        }
-        .btn:hover { background: transparent; color: var(--primary); transform: translateY(-0.3rem); }
+        .about-img img { width: 22rem; height: 22rem; object-fit: cover; border-radius: 50%; box-shadow: 0 0 4rem rgba(181,48,82,0.3); }
 
-        .about-img img {
-            width: 22rem; height: 22rem;
-            object-fit: cover; border-radius: 50%;
-            box-shadow: 0 0 4rem rgba(181, 48, 82, 0.3);
+        /* ── ABOUT ── */
+        .about-hero {
+            display: flex; align-items: center; gap: 4rem;
+            background: rgba(255,255,255,0.5); backdrop-filter: blur(10px);
+            border-radius: 2.5rem; padding: 3rem; margin-bottom: 3rem;
+            box-shadow: 0 1rem 3rem rgba(181,48,82,0.08); width: 100%;
         }
+        .about-hero-img img { width: 16rem; height: 25rem; object-fit: cover; border-radius: 0; box-shadow: none; align-items: stretch}
+        .about-hero-text h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .about-hero-text h2 span { color: var(--primary); }
+        .about-hero-text .tagline { color: var(--primary); font-weight: 600; margin-bottom: 1.2rem; font-size: 1rem; }
+        .about-hero-text p { color: #555; line-height: 1.9; font-size: 0.95rem; }
 
-        .section-title { font-size: 3.5rem; font-weight: 800; margin-bottom: 3rem; text-align: center; }
-        .section-title span { color: var(--primary); }
+        .info-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 6rem; margin-bottom: 3rem; width: 100%; }
+        .info-card { background: var(--white); border-radius: 1rem; padding: 1.8rem; box-shadow: 0 1rem 3rem rgba(181,48,82,0.08); transition: 0.3s; }
+        .info-card:hover { transform: translateY(-5px); }
+        .info-card .icon { font-size: 1.8rem; color: var(--primary); margin-bottom: 0.8rem; }
+        .info-card h3 { font-size: 0.85rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05rem; color: #999; margin-bottom: 0.4rem; }
+        .info-card p { color: var(--text-dark); font-weight: 500; font-size: 0.95rem; }
 
-        .skill-box {
-             background: var(--white); padding: 3rem 2rem; border-radius: 2.5rem;
-             display: flex; flex-direction: column; align-items: center; gap: 1.2rem;
-             box-shadow: 0 1rem 3rem rgba(181,48,82,0.1); width: 250px;
-        }
+        .interests-section { background: rgba(255,255,255,0.5); backdrop-filter: blur(10px); border-radius: 2.5rem; padding: 2.5rem; box-shadow: 0 1rem 3rem rgba(181,48,82,0.08); width: 100%; }
+        .interests-section h2 { font-size: 1.6rem; font-weight: 700; margin-bottom: 1.5rem; }
+        .interests-section h2 span { color: var(--primary); }
+        .interests-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+        .interest-item { background: var(--white); border-radius: 1.5rem; padding: 1.2rem; text-align: center; transition: 0.3s; }
+        .interest-item:hover { background: var(--primary); color: var(--white); transform: translateY(-4px); }
+        .interest-item:hover i, .interest-item:hover p { color: var(--white); }
+        .interest-item i { font-size: 1.8rem; color: var(--primary); margin-bottom: 0.5rem; display: block; transition: 0.3s; }
+        .interest-item p { font-weight: 600; font-size: 0.85rem; transition: 0.3s; }
+
+        /* ── SKILLS ── */
+        .skill-box { background: var(--white); padding: 3rem 2rem; border-radius: 2.5rem; display: flex; flex-direction: column; align-items: center; gap: 1.2rem; box-shadow: 0 1rem 3rem rgba(181,48,82,0.1); width: 250px; }
         .skill-box i { font-size: 5rem; color: var(--primary); }
-
         .skills-table-container { width: 100%; max-width: 700px; margin-top: 4rem; overflow-x: auto; }
-        .mastery-table {
-            width: 100%; border-collapse: collapse; background: var(--white);
-            border-radius: 1.5rem; overflow: hidden; box-shadow: 0 1rem 3rem rgba(181, 48, 82, 0.1);
-        }
+        .mastery-table { width: 100%; border-collapse: collapse; background: var(--white); border-radius: 1.5rem; overflow: hidden; box-shadow: 0 1rem 3rem rgba(181,48,82,0.1); }
         .mastery-table th, .mastery-table td { padding: 1.2rem 1.5rem; text-align: left; }
         .mastery-table th { background-color: var(--primary); color: var(--white); text-transform: uppercase; font-size: 0.8rem; }
-        .percent-badge { background: rgba(181, 48, 82, 0.1); color: var(--primary); padding: 0.3rem 0.8rem; border-radius: 1rem; font-weight: 700; }
+        .percent-badge { background: rgba(181,48,82,0.1); color: var(--primary); padding: 0.3rem 0.8rem; border-radius: 1rem; font-weight: 700; }
 
-        .projects-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; width: 100%; max-width: 1100px; }
-        .project-card {
-            background: var(--white); border-radius: 2rem; overflow: hidden;
-            box-shadow: 0 1rem 3rem rgba(181, 48, 82, 0.1); transition: 0.5s;
+        /* ── HOBBIES ── */
+        .guitar-hero {
+            display: flex; align-items: center; gap: 4rem;
+            background: rgba(255,255,255,0.5); backdrop-filter: blur(10px);
+            border-radius: 2.5rem; padding: 3rem; margin-bottom: 3rem;
+            box-shadow: 0 1rem 3rem rgba(181,48,82,0.08); width: 100%;
         }
+        .guitar-icon-wrap { width: 140px; height: 140px; flex-shrink: 0; background: rgba(181,48,82,0.08); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+        .guitar-icon-wrap i { font-size: 4.5rem; color: var(--primary); }
+        .guitar-text h2 { font-size: 1.8rem; font-weight: 700; margin-bottom: 0.8rem; }
+        .guitar-text h2 span { color: var(--primary); }
+        .guitar-text p { color: #555; line-height: 1.9; font-size: 0.95rem; }
+
+        .stats-row { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 1.2rem; margin-bottom: 3rem; width: 100%; }
+        .stat-box { background: var(--white); border-radius: 2rem; padding: 1.5rem; text-align: center; box-shadow: 0 1rem 3rem rgba(181,48,82,0.08); transition: 0.3s; }
+        .stat-box:hover { transform: translateY(-5px); }
+        .stat-box .num { font-size: 2rem; font-weight: 800; color: var(--primary); }
+        .stat-box p { color: #777; font-size: 0.85rem; margin-top: 0.3rem; }
+
+        .hobby-sub-title { font-size: 1.6rem; font-weight: 700; margin-bottom: 1.5rem; align-self: flex-start; }
+        .hobby-sub-title span { color: var(--primary); }
+
+        .genre-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; width: 100%; }
+        .genre-card { background: var(--white); border-radius: 2rem; padding: 1.8rem; box-shadow: 0 1rem 3rem rgba(181,48,82,0.08); transition: 0.4s; text-align: center; }
+        .genre-card:hover { transform: translateY(-6px); box-shadow: 0 2rem 5rem rgba(181,48,82,0.15); }
+        .genre-card i { font-size: 2.2rem; color: var(--primary); margin-bottom: 0.8rem; display: block; }
+        .genre-card h3 { font-size: 1rem; font-weight: 700; margin-bottom: 0.4rem; }
+        .genre-card p { color: #666; font-size: 0.85rem; line-height: 1.7; }
+
+        .progress-section { background: rgba(255,255,255,0.5); backdrop-filter: blur(10px); border-radius: 2.5rem; padding: 2.5rem; margin-bottom: 3rem; box-shadow: 0 1rem 3rem rgba(181,48,82,0.08); width: 100%; }
+        .chord-list { display: flex; flex-direction: column; gap: 1.1rem; margin-top: 1.2rem; }
+        .chord-item { display: flex; align-items: center; gap: 1.2rem; }
+        .chord-name { font-weight: 700; font-size: 0.9rem; width: 80px; flex-shrink: 0; }
+        .chord-bar-wrap { flex: 1; background: rgba(181,48,82,0.08); border-radius: 2rem; height: 10px; overflow: hidden; }
+        .chord-bar { height: 100%; background: var(--primary); border-radius: 2rem; }
+        .chord-label { font-size: 0.78rem; color: #888; width: 60px; text-align: right; flex-shrink: 0; }
+
+        .quote-box { background: var(--primary); color: var(--white); border-radius: 2.5rem; padding: 3rem; text-align: center; box-shadow: 0 1rem 3rem rgba(181,48,82,0.3); width: 100%; }
+        .quote-box i { font-size: 2rem; opacity: 0.6; margin-bottom: 1rem; display: block; }
+        .quote-box blockquote { font-size: 1.1rem; font-style: italic; line-height: 1.8; opacity: 0.95; }
+        .quote-box cite { display: block; margin-top: 1rem; font-size: 0.88rem; opacity: 0.7; }
+
+        /* ── MOVIES ── */
+        .filter-bar { display: flex; justify-content: center; gap: 1rem; margin-bottom: 3rem; flex-wrap: wrap; }
+        .filter-btn { padding: 0.55rem 1.6rem; border-radius: 3rem; font-size: 0.88rem; font-weight: 600; cursor: pointer; border: 2px solid var(--primary); background: transparent; color: var(--primary); transition: 0.3s; font-family: 'Poppins', sans-serif; }
+        .filter-btn.active, .filter-btn:hover { background: var(--primary); color: var(--white); }
+
+        .movies-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1.5rem; margin-bottom: 3rem; width: 100%; }
+        .movie-card { background: var(--white); border-radius: 1.8rem; overflow: hidden; box-shadow: 0 1rem 3rem rgba(181,48,82,0.08); transition: 0.4s; }
+        .movie-card:hover { transform: translateY(-8px); box-shadow: 0 2rem 5rem rgba(181,48,82,0.18); }
+        .movie-poster { height: 180px; display: flex; align-items: center; justify-content: center; font-size: 3.5rem; position: relative; overflow: hidden; background: #f0f0f0; }
+        .movie-poster img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .movie-badge { position: absolute; top: 10px; right: 10px; background: var(--primary); color: var(--white); font-size: 0.72rem; font-weight: 700; padding: 0.2rem 0.6rem; border-radius: 2rem; }
+        .movie-info { padding: 1.1rem 1.3rem; }
+        .movie-genre-label { font-size: 0.72rem; font-weight: 700; color: var(--primary); text-transform: uppercase; letter-spacing: 0.05rem; margin-bottom: 0.3rem; }
+        .movie-title { font-size: 0.95rem; font-weight: 700; margin-bottom: 0.3rem; line-height: 1.4; }
+        .movie-year { font-size: 0.8rem; color: #999; margin-bottom: 0.6rem; }
+        .movie-rating { display: flex; gap: 2px; }
+        .movie-rating i { font-size: 0.75rem; color: #f0a500; }
+        .movie-rating i.empty { color: #ddd; }
+
+        .add-note { background: rgba(255,255,255,0.5); backdrop-filter: blur(10px); border-radius: 2rem; padding: 2rem 2.5rem; text-align: center; border: 2px dashed rgba(181,48,82,0.3); color: #999; font-size: 0.92rem; width: 100%; }
+        .add-note i { font-size: 1.8rem; color: rgba(181,48,82,0.3); margin-bottom: 0.8rem; display: block; }
+
+        /* ── PLAYLIST ── */
+        .playlist-layout { display: grid; grid-template-columns: 1fr 280px; gap: 2.5rem; width: 100%; }
+
+        .now-playing { background: var(--primary); color: var(--white); border-radius: 2.5rem; padding: 2rem; margin-bottom: 1.5rem; box-shadow: 0 1rem 3rem rgba(181,48,82,0.3); text-align: center; }
+        .vinyl { width: 90px; height: 90px; border-radius: 50%; background: #1a1a1a; margin: 0 auto 1.2rem; display: flex; align-items: center; justify-content: center; position: relative; animation: spin 4s linear infinite; animation-play-state: paused; }
+        .vinyl.playing { animation-play-state: running; }
+        .vinyl::before { content: ''; position: absolute; width: 18px; height: 18px; background: var(--primary); border-radius: 50%; }
+        .vinyl-ring { position: absolute; border-radius: 50%; border: 1px solid rgba(255,255,255,0.1); }
+        @keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+        .now-playing h3 { font-size: 1.1rem; font-weight: 700; margin-bottom: 0.3rem; }
+        .now-playing p { opacity: 0.8; font-size: 0.88rem; }
+        .play-btn { width: 48px; height: 48px; background: var(--white); color: var(--primary); border-radius: 50%; border: none; cursor: pointer; font-size: 1.1rem; margin: 1.2rem auto 0; display: flex; align-items: center; justify-content: center; transition: 0.3s; }
+        .play-btn:hover { transform: scale(1.1); }
+
+        .playlist-section { background: var(--white); border-radius: 2rem; padding: 1.8rem; box-shadow: 0 1rem 3rem rgba(181,48,82,0.08); margin-bottom: 1.5rem; }
+        .playlist-section h2 { font-size: 1.1rem; font-weight: 700; margin-bottom: 1.2rem; display: flex; align-items: center; gap: 0.6rem; }
+        .playlist-section h2 span { color: var(--primary); }
+        .song-list { display: flex; flex-direction: column; }
+        .song-item { display: flex; align-items: center; gap: 1rem; padding: 0.8rem 0.8rem; border-radius: 1rem; transition: 0.2s; cursor: pointer; }
+        .song-item:hover { background: rgba(181,48,82,0.05); }
+        .song-item.active { background: rgba(181,48,82,0.08); }
+        .song-num { font-size: 0.82rem; color: #bbb; width: 18px; text-align: center; flex-shrink: 0; }
+        .song-art { width: 38px; height: 38px; border-radius: 0.7rem; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+        .song-details { flex: 1; min-width: 0; }
+        .song-title { font-weight: 600; font-size: 0.88rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+        .song-artist { font-size: 0.76rem; color: #999; margin-top: 0.1rem; }
+        .song-genre-tag { font-size: 0.68rem; font-weight: 600; color: var(--primary); background: rgba(181,48,82,0.1); padding: 0.2rem 0.55rem; border-radius: 1rem; flex-shrink: 0; }
+        .song-duration { font-size: 0.78rem; color: #bbb; flex-shrink: 0; width: 32px; text-align: right; }
+
+        .sidebar-widget { background: var(--white); border-radius: 1.8rem; padding: 1.5rem; box-shadow: 0 1rem 3rem rgba(181,48,82,0.08); margin-bottom: 1.2rem; }
+        .sidebar-widget h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 1rem; }
+        .sidebar-widget h3 span { color: var(--primary); }
+        .genre-stat { display: flex; align-items: center; gap: 0.8rem; margin-bottom: 0.8rem; }
+        .genre-stat-name { font-size: 0.82rem; font-weight: 600; width: 65px; flex-shrink: 0; }
+        .genre-stat-bar-wrap { flex: 1; height: 7px; background: rgba(181,48,82,0.08); border-radius: 2rem; overflow: hidden; }
+        .genre-stat-bar { height: 100%; background: var(--primary); border-radius: 2rem; }
+        .mood-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 0.6rem; }
+        .mood-item { background: rgba(181,48,82,0.06); border-radius: 0.8rem; padding: 0.7rem; text-align: center; }
+        .mood-item .mood-emoji { font-size: 1.2rem; display: block; margin-bottom: 0.2rem; }
+        .mood-item p { font-size: 0.74rem; font-weight: 600; color: #555; }
+
+        /* ── PROJECTS ── */
+        .projects-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; width: 100%; }
+        .project-card { background: var(--white); border-radius: 2rem; overflow: hidden; box-shadow: 0 1rem 3rem rgba(181,48,82,0.1); transition: 0.5s; }
         .project-card:hover { transform: translateY(-10px); }
         .project-img { width: 100%; height: 250px; background: #f0f0f0; }
         .project-img img { width: 100%; height: 100%; object-fit: cover; }
         .project-info { padding: 1.5rem; }
         .project-link { color: var(--primary); font-weight: 600; display: inline-flex; align-items: center; gap: 0.5rem; }
 
-        .contact-container {
-            display: flex; gap: 3rem; width: 100%; max-width: 1000px;
-            background: var(--white); padding: 3rem; border-radius: 3rem;
-            box-shadow: 0 1rem 3rem rgba(181, 48, 82, 0.1);
-        }
+        /* ── CONTACT ── */
+        .contact-container { display: flex; gap: 3rem; width: 100%; max-width: 1000px; background: var(--white); padding: 3rem; border-radius: 3rem; box-shadow: 0 1rem 3rem rgba(181,48,82,0.1); }
         .contact-form { flex: 1.5; display: flex; flex-direction: column; gap: 1.2rem; }
-        .contact-form input, .contact-form textarea {
-            width: 100%; padding: 1rem 1.5rem; border-radius: 1.5rem;
-            border: 1px solid #ddd; outline: none;
-        }
+        .contact-form input, .contact-form textarea { width: 100%; padding: 1rem 1.5rem; border-radius: 1.5rem; border: 1px solid #ddd; outline: none; font-family: 'Poppins', sans-serif; transition: 0.3s; }
+        .contact-form input:focus, .contact-form textarea:focus { border-color: var(--primary); }
+        .info-item { display: flex; align-items: center; gap: 1rem; margin-bottom: 1rem; }
+        .info-item i { color: var(--primary); font-size: 1.1rem; }
 
-        /* --- RESPONSIVE FIX --- */
+        /* ── RESPONSIVE ── */
         @media (max-width: 1024px) {
             .sidebar-left, .sidebar-right { display: none; }
             .mobile-nav { display: flex; }
-            section { margin: 0; width: 100%; padding: 8rem 5% 4rem; }
+            section { margin: 0; width: 100%; padding: 7rem 5% 4rem; }
             .home-container { flex-direction: column-reverse; text-align: center; }
             .home-content { text-align: center; }
-            .home-content h2 { font-size: 3.2rem; }
-            .about-img img { width: 18rem; height: 18rem; }
+            .home-content h2 { font-size: 3rem; }
+            .about-img img { width: 16rem; height: 16rem; }
+            .about-hero { flex-direction: column; text-align: center; }
+            .guitar-hero { flex-direction: column; text-align: center; }
             .contact-container { flex-direction: column; }
+            .playlist-layout { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
+    <!-- MOBILE NAV -->
     <nav class="mobile-nav">
         <div class="logo"><span>Junita</span></div>
         <div class="mobile-menu-links">
             <a href="#Home">Home</a>
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
-            <a href="#projects">Work</a>
+            <a href="#hobbies">Hobbies</a>
+            <a href="#movies">Movies</a>
+            <a href="#playlist">Playlist</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
         </div>
     </nav>
 
+    <!-- SIDEBAR LEFT -->
     <aside class="sidebar-left">
         <a href="#" class="logo"><span>Junita</span><br>Randa Liling</a>
         <ul class="nav-links-vertical">
-            <li><a href="#Home">Home</a></li> 
+            <li><a href="#Home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#skills">Skills</a></li>
+            <li><a href="#hobbies">Hobbies</a></li>
+            <li><a href="#movies">Movies</a></li>
+            <li><a href="#playlist">Playlist</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
     </aside>
 
+    <!-- SIDEBAR RIGHT -->
     <aside class="sidebar-right">
-       <div class="connect-text">Connect</div>
-       <div class="side-socials">
-           <a href="https://github.com/Junitaaa" target="_blank"><i class="fa-brands fa-github"></i></a>
-           <a href="https://www.instagram.com/junitaranda_" target="_blank"><i class="fa-brands fa-instagram"></i></a>
-           <a href="mailto:lilingjunita5@gmail.com"><i class="fa-solid fa-envelope"></i></a>
-       </div>
+        <div class="connect-text">Connect</div>
+        <div class="side-socials">
+            <a href="https://github.com/Junitaaa" target="_blank"><i class="fa-brands fa-github"></i></a>
+            <a href="https://www.instagram.com/junitaranda_" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="mailto:lilingjunita5@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+        </div>
     </aside>
 
+    <!-- ══ HOME ══ -->
     <section id="Home">
         <div class="home-container">
             <div class="home-content">
-               <h2>Hi, I'm <span>Junita</span>!</h2>
+                <h2>Hi, I'm <span>Junita</span>!</h2>
                 <h3>Information System Student</h3>
                 <p>I have a strong interest in UI/UX and I'm currently exploring various aspects of front-end development.</p>
                 <a href="#contact" class="btn">Contact Me</a>
             </div>
             <div class="about-img">
-                <img src="junita.png" alt="Junita Profile">
+                <img src="junita2.JPG" alt="Junita Profile">
             </div>
         </div>
     </section>
 
+    <!-- ══ ABOUT ══ -->
     <section id="about">
         <h2 class="section-title">About <span>Me</span></h2>
-        <div class="about-container">
-            <p>Hi, I'm Junita, an Information System student at Universitas Internasional Batam.
-               I move in the world of technology, but I don't live in just one dimension.
-               Beyond code and systems, I have a thing for music—I play the guitar pretty well.
-               And when the noise quiets down, you'll find me getting lost in films, collecting stories
-               the way some people collect memories.</p>
-       </div>
+
+        <div class="about-hero">
+            <div class="about-hero-img">
+                <img src="junita.png" alt="Junita">
+            </div>
+            <div class="about-hero-text">
+                <h2>Hi, I'm <span>Junita</span>!</h2>
+                <p class="tagline">Information System Student · UI/UX Enthusiast · Guitarist</p>
+                <p>I'm Junita Randa Liling, an Information System student at Universitas Internasional Batam. I move in the world of technology, but I don't live in just one dimension.</p>
+                <br>
+                <p>I have a strong passion for UI/UX design and front-end development. I believe that great design is not just about aesthetics — it's about creating experiences that feel intuitive, meaningful, and human.</p>
+                <br>
+                <p>Beyond code and systems, I have a thing for music — I play the guitar pretty well. And when the noise quiets down, you'll find me getting lost in films, collecting stories the way some people collect memories.</p>
+                <a href="#contact" class="btn">Let's Work Together</a>
+            </div>
+        </div>
+
+        <div class="info-grid">
+            <div class="info-card">
+                <div class="icon"><i class="fa-solid fa-graduation-cap"></i></div>
+                <h3>Education</h3>
+                <p>Information System</p>
+                <p style="color:#999;font-size:0.82rem;">Universitas Internasional Batam</p>
+            </div>
+            <div class="info-card">
+                <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+                <h3>Location</h3>
+                <p>Batam, Indonesia</p>
+                <p style="color:#999;font-size:0.82rem;">Available for remote work</p>
+            </div>
+            <div class="info-card">
+                <div class="icon"><i class="fa-solid fa-briefcase"></i></div>
+                <h3>Focus Area</h3>
+                <p>UI/UX Design</p>
+                <p style="color:#999;font-size:0.82rem;">Front-end Development</p>
+            </div>
+            <div class="info-card">
+                <div class="icon"><i class="fa-solid fa-language"></i></div>
+                <h3>Languages</h3>
+                <p>Indonesian, English</p>
+                <p style="color:#999;font-size:0.82rem;">Fluent in both</p>
+            </div>
+        </div>
+
+        <div class="interests-section">
+            <h2>My <span>Interests</span></h2>
+            <div class="interests-grid">
+                <div class="interest-item"><i class="fa-solid fa-pen-ruler"></i><p>UI/UX Design</p></div>
+                <div class="interest-item"><i class="fa-solid fa-code"></i><p>Front-end Dev</p></div>
+                <div class="interest-item"><i class="fa-solid fa-guitar"></i><p>Playing Guitar</p></div>
+                <div class="interest-item"><i class="fa-solid fa-film"></i><p>Watching Films</p></div>
+                <div class="interest-item"><i class="fa-solid fa-music"></i><p>Music</p></div>
+                <div class="interest-item"><i class="fa-solid fa-earth-americas"></i><p>Learning New Languages</p></div>
+            </div>
+        </div>
     </section>
 
+    <!-- ══ SKILLS ══ -->
     <section id="skills">
         <h2 class="section-title">My <span>Skills</span></h2>
         <div class="skill-box">
             <i class="fa-brands fa-figma"></i>
             <h4>UI/UX Design</h4>
-            <p style="font-size: 0.9rem; color: #666; margin-top: 0.5rem;">Figma Specialist</p>
+            <p style="font-size:0.9rem;color:#666;margin-top:0.5rem;">Figma Specialist</p>
         </div>
         <div class="skills-table-container">
             <table class="mastery-table">
@@ -284,7 +409,240 @@
             </table>
         </div>
     </section>
-    
+
+    <!-- ══ HOBBIES ══ -->
+    <section id="hobbies">
+        <h2 class="section-title">My <span>Hobbies</span></h2>
+
+        <div class="guitar-hero">
+            <div class="guitar-icon-wrap"><i class="fa-solid fa-guitar"></i></div>
+            <div class="guitar-text">
+                <h2>Playing <span>Guitar</span></h2>
+                <p>Music has always been a big part of my life. I picked up the guitar a few years ago and it quickly became one of my favourite ways to unwind. There's something magical about how a few chords can express exactly what words can't.</p>
+                <br>
+                <p>I mostly play fingerstyle and strumming — from mellow acoustic tunes to upbeat pop songs. Whether it's late at night or a quiet afternoon, the guitar is always there.</p>
+            </div>
+        </div>
+
+        <div class="stats-row">
+            <div class="stat-box"><div class="num">3+</div><p>Years Playing</p></div>
+            <div class="stat-box"><div class="num">20+</div><p>Songs Learned</p></div>
+            <div class="stat-box"><div class="num">2</div><p>Guitar Styles</p></div>
+            <div class="stat-box"><div class="num">∞</div><p>Hours of Joy</p></div>
+        </div>
+
+        <h2 class="hobby-sub-title">Genres I <span>Play</span></h2>
+        <div class="genre-grid">
+            <div class="genre-card"><i class="fa-solid fa-music"></i><h3>Pop</h3><p>Catchy melodies and familiar chords — my go-to for strumming along to favourite songs.</p></div>
+            <div class="genre-card"><i class="fa-solid fa-guitar"></i><h3>Acoustic</h3><p>Mellow, clean, and heartfelt. Acoustic sessions are my favourite way to relax.</p></div>
+            <div class="genre-card"><i class="fa-solid fa-headphones"></i><h3>Indie</h3><p>Unique chord progressions and moody vibes — indie songs always feel personal and raw.</p></div>
+        </div>
+
+        <div class="progress-section">
+            <h2 class="hobby-sub-title">Chord <span>Progress</span></h2>
+            <div class="chord-list">
+                <div class="chord-item"><span class="chord-name">C Major</span><div class="chord-bar-wrap"><div class="chord-bar" style="width:95%"></div></div><span class="chord-label">Mastered</span></div>
+                <div class="chord-item"><span class="chord-name">G Major</span><div class="chord-bar-wrap"><div class="chord-bar" style="width:92%"></div></div><span class="chord-label">Mastered</span></div>
+                <div class="chord-item"><span class="chord-name">A Minor</span><div class="chord-bar-wrap"><div class="chord-bar" style="width:90%"></div></div><span class="chord-label">Mastered</span></div>
+                <div class="chord-item"><span class="chord-name">D Major</span><div class="chord-bar-wrap"><div class="chord-bar" style="width:60%"></div></div><span class="chord-label">Learning</span></div>
+                <div class="chord-item"><span class="chord-name">F Major</span><div class="chord-bar-wrap"><div class="chord-bar" style="width:95%"></div></div><span class="chord-label">Mastered</span></div>
+                <div class="chord-item"><span class="chord-name">B Minor</span><div class="chord-bar-wrap"><div class="chord-bar" style="width:50%"></div></div><span class="chord-label">Practice</span></div>
+            </div>
+        </div>
+
+        <div class="quote-box">
+            <i class="fa-solid fa-quote-left"></i>
+            <blockquote>"Music gives a soul to the universe, wings to the mind, flight to the imagination, and life to everything."</blockquote>
+            <cite>— Plato</cite>
+        </div>
+    </section>
+
+    <!-- ══ MOVIES ══ -->
+    <section id="movies">
+        <h2 class="section-title">Movies I've <span>Watched</span></h2>
+
+        <div class="filter-bar">
+            <button class="filter-btn active" onclick="filterMovies('all', this)">All</button>
+            <button class="filter-btn" onclick="filterMovies('drama', this)">Drama</button>
+            <button class="filter-btn" onclick="filterMovies('romance', this)">Romance</button>
+            <button class="filter-btn" onclick="filterMovies('thriller', this)">Thriller</button>
+            <button class="filter-btn" onclick="filterMovies('animation', this)">Animation</button>
+        </div>
+
+        <div class="movies-grid" id="moviesGrid">
+            <div class="movie-card" data-genre="drama">
+                <div class="movie-poster">
+                    <img src="bones.jpeg" alt="Bones">
+                    <span class="movie-badge">Fav ❤️</span>
+                </div>
+                <div class="movie-info">
+                    <p class="movie-genre-label">Drama</p>
+                    <h3 class="movie-title">Bones</h3>
+                    <p class="movie-year">2005 · USA</p>
+                    <div class="movie-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+            </div>
+            <div class="movie-card" data-genre="drama">
+                <div class="movie-poster">
+                    <img src="avengers.jpeg" alt="Avengers">
+                </div>
+                <div class="movie-info">
+                    <p class="movie-genre-label">Drama</p>
+                    <h3 class="movie-title">Avengers</h3>
+                    <p class="movie-year">2012 · USA</p>
+                    <div class="movie-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star empty"></i></div>
+                </div>
+            </div>
+            <div class="movie-card" data-genre="thriller">
+                <div class="movie-poster">
+                    <img src="Enola Holmes.jpeg" alt="Enola Holmes">
+                </div>
+                <div class="movie-info">
+                    <p class="movie-genre-label">Thriller</p>
+                    <h3 class="movie-title">Enola Holmes</h3>
+                    <p class="movie-year">2020 · UK</p>
+                    <div class="movie-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+            </div>
+            <div class="movie-card" data-genre="drama">
+                <div class="movie-poster">
+                    <img src="Fast and Furious.jpeg" alt="Fast and Furious">
+                </div>
+                <div class="movie-info">
+                    <p class="movie-genre-label">Action</p>
+                    <h3 class="movie-title">Fast & Furious</h3>
+                    <p class="movie-year">2001 · USA</p>
+                    <div class="movie-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star empty"></i></div>
+                </div>
+            </div>
+            <div class="movie-card" data-genre="drama">
+                <div class="movie-poster">
+                    <img src="jumanji.jpeg" alt="Jumanji">
+                </div>
+                <div class="movie-info">
+                    <p class="movie-genre-label">Adventure</p>
+                    <h3 class="movie-title">Jumanji</h3>
+                    <p class="movie-year">2017 · USA</p>
+                    <div class="movie-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star empty"></i></div>
+                </div>
+            </div>
+            <div class="movie-card" data-genre="thriller">
+                <div class="movie-poster">
+                    <img src="maze runner.jpeg" alt="Maze Runner">
+                </div>
+                <div class="movie-info">
+                    <p class="movie-genre-label">Thriller</p>
+                    <h3 class="movie-title">Maze Runner</h3>
+                    <p class="movie-year">2014 · USA</p>
+                    <div class="movie-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i></div>
+                </div>
+            </div>
+            <div class="movie-card" data-genre="animation">
+                <div class="movie-poster">
+                    <img src="animasi.jpg" alt="Ratatouille">
+                </div>
+                <div class="movie-info">
+                    <p class="movie-genre-label">Animation</p>
+                        <h3 class="movie-title">Ratatouille</h3>
+                        <p class="movie-year">2007 · USA</p>
+                        <div class="movie-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star empty"></i></div>
+                    </div>
+                </div>
+                <div class="movie-card" data-genre="romance">
+                    <div class="movie-poster">
+                        <img src="the idea of you.jpg" alt="The Idea of You">
+                    </div>
+                    <div class="movie-info">
+                        <p class="movie-genre-label">romance</p>
+                        <h3 class="movie-title">The Idea of You</h3>
+                        <p class="movie-year">2022 · USA</p>
+                        <div class="movie-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-regular fa-star empty"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ PLAYLIST ══ -->
+    <section id="playlist">
+        <h2 class="section-title">My <span>Playlist</span></h2>
+        <div class="playlist-layout">
+            <div>
+                <div class="playlist-section">
+                    <h2><i class="fa-solid fa-music" style="color:var(--primary);font-size:0.9rem;"></i> My <span>Favorites</span></h2>
+                    <div class="song-list">
+
+                        <div class="song-item">
+                            <span class="song-num">1</span>
+                            <div class="song-art" style="background:#fce4ec;">🎵</div>
+                            <div class="song-details"><p class="song-title">Shape of My Heart</p><p class="song-artist">Backstreet Boys</p></div>
+                            <span class="song-genre-tag">Pop</span>
+                        </div>
+                        <iframe src="https://open.spotify.com/embed/track/35o9a4iAfLl5jRmqMX9c1D" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" style="border-radius:1rem; margin-bottom:0.8rem;"></iframe>
+
+                        <div class="song-item">
+                            <span class="song-num">2</span>
+                            <div class="song-art" style="background:#e8eaf6;">🎵</div>
+                            <div class="song-details"><p class="song-title">Make You Feel My Love</p><p class="song-artist">Adele</p></div>
+                            <span class="song-genre-tag">Soul</span>
+                        </div>
+                        <iframe src="https://open.spotify.com/embed/track/4YV9TCrHSQ30ZoSG8ENuNx" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" style="border-radius:1rem; margin-bottom:0.8rem;"></iframe>
+
+                        <div class="song-item">
+                            <span class="song-num">3</span>
+                            <div class="song-art" style="background:#f3e5f5;">🎵</div>
+                            <div class="song-details"><p class="song-title">You're Still The One</p><p class="song-artist">Shania Twain</p></div>
+                            <span class="song-genre-tag">Country Pop</span>
+                        </div>
+                        <iframe src="https://open.spotify.com/embed/track/1wb4P4F0sxAQ2KXrRvsx6n" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" style="border-radius:1rem; margin-bottom:0.8rem;"></iframe>
+
+                        <div class="song-item">
+                            <span class="song-num">4</span>
+                            <div class="song-art" style="background:#e8f5e9;">🎵</div>
+                            <div class="song-details"><p class="song-title">As Long As You Love Me</p><p class="song-artist">Backstreet Boys</p></div>
+                            <span class="song-genre-tag">Pop</span>
+                        </div>
+                        <iframe src="https://open.spotify.com/embed/track/3UpS7kBnkVQYG13pDDFTC4" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" style="border-radius:1rem; margin-bottom:0.8rem;"></iframe>
+
+                        <div class="song-item">
+                            <span class="song-num">5</span>
+                            <div class="song-art" style="background:#fff8e1;">🎵</div>
+                            <div class="song-details"><p class="song-title">Exile</p><p class="song-artist">Taylor Swift ft. Bon Iver</p></div>
+                            <span class="song-genre-tag"> Indie Folk</span>
+                        </div>
+                        <iframe src="https://open.spotify.com/embed/track/1MFRapRpkXLhgMplU0CM76" width="100%" height="80" frameborder="0" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" style="border-radius:1rem; margin-bottom:0.8rem;"></iframe>
+
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="sidebar-widget">
+                    <h3>Genre <span>Stats</span></h3>
+                    <div class="genre-stat"><span class="genre-stat-name">Pop</span><div class="genre-stat-bar-wrap"><div class="genre-stat-bar" style="width:70%"></div></div></div>
+                    <div class="genre-stat"><span class="genre-stat-name">Soul</span><div class="genre-stat-bar-wrap"><div class="genre-stat-bar" style="width:40%"></div></div></div>
+                    <div class="genre-stat"><span class="genre-stat-name">Country</span><div class="genre-stat-bar-wrap"><div class="genre-stat-bar" style="width:30%"></div></div></div>
+                    <div class="genre-stat"><span class="genre-stat-name">Folk</span><div class="genre-stat-bar-wrap"><div class="genre-stat-bar" style="width:35%"></div></div></div>
+                </div>
+                <div class="sidebar-widget">
+                    <h3>Music <span>Moods</span></h3>
+                    <div class="mood-grid">
+                        <div class="mood-item"><span class="mood-emoji">🥰</span><p>Romantic</p></div>
+                        <div class="mood-item"><span class="mood-emoji">🌙</span><p>Chill</p></div>
+                        <div class="mood-item"><span class="mood-emoji">🎸</span><p>Classic</p></div>
+                        <div class="mood-item"><span class="mood-emoji">🥺</span><p>Emotional</p></div>
+                    </div>
+                </div>
+                <div class="sidebar-widget" style="background:var(--primary);color:var(--white);">
+                    <h3 style="color:var(--white);">Total <span style="color:rgba(255,255,255,0.7);">Songs</span></h3>
+                    <p style="font-size:2rem;font-weight:800;">5</p>
+                    <p style="opacity:0.8;font-size:0.85rem;margin-top:0.2rem;">in my playlist</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ══ PROJECTS ══ -->
     <section id="projects">
         <h2 class="section-title">My <span>Projects</span></h2>
         <div class="projects-container">
@@ -293,35 +651,82 @@
                 <div class="project-info">
                     <h4>Mobile App Design</h4>
                     <p>Desain UI untuk aplikasi sistem informasi berbasis mobile menggunakan Figma.</p>
-                   <a href="https://www.figma.com/design/lrrR7ScoQ5FOns5efmnUqi/Untitled?node-id=0-1&t=hekojJMshqzJszMq-1" target="_blank" class="project-link">View Prototype <i class="fa-solid fa-arrow-right"></i></a>
+                    <a href="https://www.figma.com/design/lrrR7ScoQ5FOns5efmnUqi/Untitled?node-id=0-1&t=hekojJMshqzJszMq-1" target="_blank" class="project-link">View Prototype <i class="fa-solid fa-arrow-right"></i></a>
                 </div>
             </div>
         </div>
     </section>
 
+    <!-- ══ CONTACT ══ -->
     <section id="contact">
         <h2 class="section-title">Contact <span>Me</span></h2>
         <div class="contact-container">
             <div class="contact-info">
                 <h3>Let's Talk!</h3>
-                <p style="margin-bottom: 2rem; color: #666;">Silakan hubungi saya melalui form ini atau kontak di bawah.</p>
-                <div class="info-item">
-                    <i class="fa-solid fa-envelope"></i>
-                    <span>lilingjunita5@gmail.com</span>
-                </div>
-                <div class="info-item">
-                    <i class="fa-solid fa-location-dot"></i>
-                    <span>Batam, Indonesia</span>
-                </div>
+                <p style="margin-bottom:2rem;color:#666;">Silakan hubungi saya melalui form ini atau kontak di bawah.</p>
+                <div class="info-item"><i class="fa-solid fa-envelope"></i><span>lilingjunita5@gmail.com</span></div>
+                <div class="info-item"><i class="fa-solid fa-location-dot"></i><span>Batam, Indonesia</span></div>
             </div>
             <form class="contact-form">
                 <input type="text" placeholder="Your Name" required>
                 <input type="email" placeholder="Your Email" required>
                 <textarea rows="5" placeholder="Your Message" required></textarea>
-                <button type="submit" class="btn" style="margin-top: 0; width: fit-content;">Send Message</button>
+                <button type="submit" class="btn" style="margin-top:0;width:fit-content;">Send Message</button>
             </form>
         </div>
     </section>
 
+    <script>
+        let isPlaying = false;
+        function togglePlay() {
+            isPlaying = !isPlaying;
+            document.getElementById('playIcon').className = isPlaying ? 'fa-solid fa-pause' : 'fa-solid fa-play';
+            document.getElementById('vinyl').className = isPlaying ? 'vinyl playing' : 'vinyl';
+        }
+        function selectSong(el, title, artist) {
+            document.querySelectorAll('.song-item').forEach(s => {
+                s.classList.remove('active');
+                const num = s.querySelector('.song-num');
+                if (num && num.querySelector('i')) {
+                    const idx = [...s.parentElement.children].indexOf(s) + 1;
+                    num.innerHTML = idx;
+                }
+            });
+            el.classList.add('active');
+            el.querySelector('.song-num').innerHTML = '<i class="fa-solid fa-volume-high" style="font-size:0.7rem;color:var(--primary);"></i>';
+            document.getElementById('npTitle').textContent = title;
+            document.getElementById('npArtist').textContent = artist;
+            isPlaying = true;
+            document.getElementById('playIcon').className = 'fa-solid fa-pause';
+            document.getElementById('vinyl').className = 'vinyl playing';
+        }
+        function filterMovies(genre, btn) {
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+            document.querySelectorAll('.movie-card').forEach(card => {
+                card.style.display = (genre === 'all' || card.dataset.genre === genre) ? 'block' : 'none';
+            });
+        }
+    </script>
+
+    <!-- ══ FOOTER ══ -->
+    <footer style="
+        margin-left: 180px;
+        margin-right: 80px;
+        background: var(--primary);
+        color: var(--white);
+        text-align: center;
+        padding: 1.8rem 5%;
+    ">
+        <p style="font-size: 0.9rem; opacity: 0.95;">
+            © 2026 <strong>Junita Randa Liling</strong>. All rights reserved.
+        </p>
+    </footer>
+ 
+    <style>
+        @media (max-width: 1024px) {
+            footer { margin-left: 0 !important; margin-right: 0 !important; }
+        }
+    </style>
 </body>
 </html>
